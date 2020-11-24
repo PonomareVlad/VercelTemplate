@@ -1,4 +1,4 @@
-import test from "./import.mjs"
+import test from "./import"
 
 export default async (req, res) => {
     res.json({
