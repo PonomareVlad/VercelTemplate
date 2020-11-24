@@ -1,1 +1,3 @@
-export default true;
+import MongoClient from "mongodb"
+
+export default MongoClient;
