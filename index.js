@@ -1,4 +1,4 @@
-import func, {test} from "./import"
+import func, {test} from "./import.mjs"
 
 export default async (req, res) => {
     func();
