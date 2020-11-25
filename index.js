@@ -6,7 +6,7 @@ export default async (req, res) => {
         body: req.body,
         query: req.query,
         cookies: req.cookies,
+        process,
         test,
-        test2: func()
     })
 }
