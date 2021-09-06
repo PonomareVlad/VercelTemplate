@@ -1,3 +1,4 @@
+const path = require("path");
 const fs = require('fs');
 const images = {
     "domains": [
@@ -12,10 +13,11 @@ const images = {
         1920
     ]
 }
-fs.mkdir('.vercel_build_output/config', {recursive: true}, (err) => {
+const path = path.resolve(__dirname, './.vercel_build_output/config');
+fs.mkdir(path, {recursive: true}, (err) => {
     if (err) throw err;
 });
-fs.writeFile('.vercel_build_output/config/images.json', JSON.stringify(images), (err) => {
+fs.writeFile(path + '/images.json', JSON.stringify(images), (err) => {
     if (err) throw err;
     console.log('Images configuration file created successfully!');
 });
