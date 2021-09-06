@@ -1,7 +1,7 @@
-const path = require("path");
 const fs = require('fs');
 const images = {
     "domains": [
+        "vercel-git-image-optimisation-ponomarevlad.vercel.app",
         "ponomarev.studio"
     ],
     "sizes": [
@@ -13,7 +13,7 @@ const images = {
         1920
     ]
 }
-const dir = path.resolve(__dirname, './.vercel_build_output/config');
+const dir = '.vercel_build_output/config';
 fs.mkdir(dir, {recursive: true}, (err) => {
     if (err) throw err;
     fs.writeFile(dir + '/images.json', JSON.stringify(images), (err) => {
