@@ -12,7 +12,10 @@ const images = {
         1920
     ]
 }
-fs.writeFile('./.vercel_build_output/config/images.json', JSON.stringify(images), (err) => {
+fs.mkdir('.vercel_build_output/config', {recursive: true}, (err) => {
+    if (err) throw err;
+});
+fs.writeFile('.vercel_build_output/config/images.json', JSON.stringify(images), (err) => {
     if (err) throw err;
     console.log('Images configuration file created successfully!');
 });
