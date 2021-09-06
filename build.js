@@ -16,8 +16,8 @@ const images = {
 const dir = path.resolve(__dirname, './.vercel_build_output/config');
 fs.mkdir(dir, {recursive: true}, (err) => {
     if (err) throw err;
-});
-fs.writeFile(dir + '/images.json', JSON.stringify(images), (err) => {
-    if (err) throw err;
-    console.log('Images configuration file created successfully!');
+    fs.writeFile(dir + '/images.json', JSON.stringify(images), (err) => {
+        if (err) throw err;
+        console.log('Images configuration file created successfully!');
+    });
 });
