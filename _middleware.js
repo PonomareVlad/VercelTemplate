@@ -10,5 +10,4 @@ export default function middleware(req, ev) {
         url.searchParams.set('city', city)
         url.searchParams.set('region', region)
     }
-    return Response.next()
 }
