@@ -1,6 +1,6 @@
 import {/*NextRequest,*/ NextResponse} from 'next/server'
 
-export async function middleware(req) {
+export default async function middleware(req) {
     const {nextUrl: url, geo} = req
     const country = geo.country //|| 'US'
     const city = geo.city //|| 'San Francisco'
