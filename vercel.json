@@ -1,14 +1,4 @@
 {
-  "builds": [
-    {
-      "src": "*.mjs",
-      "use": "@vercel/node@canary"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/node@canary"
-    }
-  ],
   "public": true,
   "github": {
     "silent": true
