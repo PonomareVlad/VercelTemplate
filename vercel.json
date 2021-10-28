@@ -1,11 +1,11 @@
 {
   "builds": [
     {
-      "src": "/**",
-      "use": "@vercel/static"
+      "src": "*.mjs",
+      "use": "@vercel/node@canary"
     },
     {
-      "src": "*.mjs",
+      "src": "*.js",
       "use": "@vercel/node@canary"
     }
   ],
