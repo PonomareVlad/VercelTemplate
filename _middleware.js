@@ -1,4 +1,3 @@
-export default function middleware(req, ev) {
+export function middleware(req) {
     console.log(JSON.stringify(req, null, 4))
-    return new Response()
 }
