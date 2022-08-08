@@ -4,7 +4,10 @@ const outputDir = new URL('./.vercel/output/', import.meta.url),
     configPath = new URL('./config.json', outputDir),
     staticDir = new URL('./static/', outputDir),
     test = new URL('./test.json', staticDir),
-    config = {version: 3}
+    config = {
+        version: 3,
+        images: {sizes: [128, 1024, 2048], formats: ["image/webp", "image/avif"], domains: ["cloudflare-ipfs.com"]}
+    }
 
 mkdirSync(outputDir, {recursive: true})
 mkdirSync(staticDir, {recursive: true})
