@@ -4,7 +4,7 @@ const rootDir = new URL('./', import.meta.url),
     outputDir = new URL('./.vercel/output/', rootDir),
     configPath = new URL('./config.json', outputDir),
     staticDir = new URL('./static/', outputDir),
-    excluded = ['.', 'node_modules'],
+    excluded = ['.', 'node_modules', 'api'],
     config = {
         version: 3,
         images: {sizes: [128, 1024, 2048], formats: ["image/webp", "image/avif"], domains: ["cloudflare-ipfs.com"]}
