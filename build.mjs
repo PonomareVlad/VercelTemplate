@@ -1,4 +1,4 @@
-import {mkdirSync, writeFileSync, readFileSync} from "fs"
+import {mkdirSync, writeFileSync} from "fs"
 
 const outputDir = new URL('./.vercel/output/', import.meta.url),
     configPath = new URL('./config.json', outputDir),
@@ -14,8 +14,7 @@ mkdirSync(staticDir, {recursive: true})
 writeFileSync(configPath, JSON.stringify(config))
 writeFileSync(test, JSON.stringify(config))
 
-const file = JSON.parse(readFileSync(configPath, {encoding: 'utf8'}))
-const result = {outputDir, configPath, staticDir, config, test, file}
+const result = {outputDir, configPath, staticDir, config, test}
 
 console.debug('Build complete', JSON.stringify(result, null, 4))
 process.exit()
