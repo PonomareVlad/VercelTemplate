@@ -1,20 +1,23 @@
-import {mkdirSync, writeFileSync} from "fs"
+import {mkdirSync, writeFileSync, cpSync, readdirSync} from "fs"
 
-const outputDir = new URL('./.vercel/output/', import.meta.url),
+const rootDir = new URL('./', import.meta.url),
+    outputDir = new URL('./.vercel/output/', rootDir),
     configPath = new URL('./config.json', outputDir),
     staticDir = new URL('./static/', outputDir),
-    test = new URL('./test.json', staticDir),
+    excluded = ['.', 'node_modules'],
     config = {
         version: 3,
         images: {sizes: [128, 1024, 2048], formats: ["image/webp", "image/avif"], domains: ["cloudflare-ipfs.com"]}
     }
 
-mkdirSync(outputDir, {recursive: true})
 mkdirSync(staticDir, {recursive: true})
 writeFileSync(configPath, JSON.stringify(config))
-writeFileSync(test, JSON.stringify(config))
 
-const result = {outputDir, configPath, staticDir, config, test}
+const exclude = path => excluded.every(exclude => !path.startsWith(exclude)),
+    options = {recursive: true, filter: path => exclude(path.split('/').pop())}
 
-console.debug('Build complete', JSON.stringify(result, null, 4))
+readdirSync(rootDir).filter(exclude).map(path =>
+    cpSync(new URL(`./${path}`, rootDir), new URL(`./${path}`, staticDir), options))
+
+console.info('Build complete')
 process.exit()
