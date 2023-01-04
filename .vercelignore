@@ -1,4 +1,6 @@
 .idea
+.github
 .vercelignore
 package-lock.json
 README.md
+build.mjs
