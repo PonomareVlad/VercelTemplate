@@ -8,7 +8,5 @@ const config = {
     "bypassToken": process.env.BYPASS_TOKEN
 }
 
-console.debug(process.env);
-
 mkdirSync(dirname(configPath), {recursive: true});
 writeFileSync(configPath, JSON.stringify(config), {});
