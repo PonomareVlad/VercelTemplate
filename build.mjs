@@ -9,4 +9,4 @@ const config = {
 }
 
 mkdirSync(dirname(configPath), {recursive: true});
-writeFileSync(configPath, JSON.stringify(config), {});
+writeFileSync(configPath, JSON.stringify(config, null, 2));
