@@ -8,5 +8,8 @@
   "public": true,
   "github": {
     "silent": true
+  },
+  "git": {
+    "deploymentEnabled": false
   }
 }
