@@ -6,29 +6,50 @@
     <meta content="dark light" name="color-scheme">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
+    <style>
+        * {
+            font-family: Helvetica, sans-serif;
+        }
+
+        fieldset {
+            display: inline-flex;
+            align-items: baseline;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-<form action="/api" enctype="multipart/form-data" method="post">
-    <fieldset>
-        <legend>multipart/form-data</legend>
-        <input name="text" placeholder="text" type="text">
-        <input name="file" type="file">
-        <button>Submit</button>
-    </fieldset>
-</form>
 <form action="/api" enctype="application/x-www-form-urlencoded" method="post">
     <fieldset>
         <legend>application/x-www-form-urlencoded</legend>
-        <input name="text" placeholder="text" type="text">
+        <input name="text" placeholder="text" type="text" value="application/x-www-form-urlencoded">
+        <br>
         <input name="file" type="file">
+        <br>
         <button>Submit</button>
     </fieldset>
 </form>
+<br>
+<br>
+<form action="/api" enctype="multipart/form-data" method="post">
+    <fieldset>
+        <legend>multipart/form-data</legend>
+        <input name="text" placeholder="text" type="text" value="multipart/form-data">
+        <br>
+        <input name="file" type="file">
+        <br>
+        <button>Submit</button>
+    </fieldset>
+</form>
+<br>
+<br>
 <form action="/api" enctype="text/plain" method="post">
     <fieldset>
         <legend>text/plain</legend>
-        <input name="text" placeholder="text" type="text">
+        <input name="text" placeholder="text" type="text" value="text/plain">
+        <br>
         <input name="file" type="file">
+        <br>
         <button>Submit</button>
     </fieldset>
 </form>
