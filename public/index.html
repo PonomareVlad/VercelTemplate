@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test form</title>
+    <meta content="dark light" name="color-scheme">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+</head>
+<body>
+<form action="/api" enctype="multipart/form-data" method="post">
+    <fieldset>
+        <legend>multipart/form-data</legend>
+        <input name="text" placeholder="text" type="text">
+        <input name="file" type="file">
+        <button>Submit</button>
+    </fieldset>
+</form>
+<form action="/api" enctype="application/x-www-form-urlencoded" method="post">
+    <fieldset>
+        <legend>application/x-www-form-urlencoded</legend>
+        <input name="text" placeholder="text" type="text">
+        <input name="file" type="file">
+        <button>Submit</button>
+    </fieldset>
+</form>
+<form action="/api" enctype="text/plain" method="post">
+    <fieldset>
+        <legend>text/plain</legend>
+        <input name="text" placeholder="text" type="text">
+        <input name="file" type="file">
+        <button>Submit</button>
+    </fieldset>
+</form>
+</body>
+</html>
